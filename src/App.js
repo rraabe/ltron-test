@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { parse } from "parse-usdl";
 import "./App.css";
+const vindec = require('vindec');
 
 const App = () => {
   const [data, setData] = useState("");
@@ -11,7 +12,8 @@ const App = () => {
   //   setData(event.target.value);
   // }
 
- 
+  console.log(`Valid: ${vindec.validate('JF2SJAXC3GH434325')}`) // false
+  console.log(vindec.nhtsaDecode('JF2SJAXC3GH434325'))
   const handleSubmit = (event) => {
     event.preventDefault();
     // const value = parse(code2, options);
