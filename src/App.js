@@ -11,41 +11,7 @@ const App = () => {
   //   setData(event.target.value);
   // }
 
-  const options = {
-    suppressErrors: false,
-  };
-  const code = `@\n\rANSI 636024070001DL00310247DLDAQ53152244\nDCSRAABE\nDDEN\nDACRICHARD\nDDFN\nDADC\nDDGU\nDCAD\nDCBNONE\nDCDNONE\nDBD02012018\nDBB01031985\nDBA01032022\nDBC2\nDAU070 in\nDAYHAZ\nDAG17 HENRY STREET\nDAIBURLINGTON\nDAJVT\nDAK054010000  \nDCF190753152244\nDCGUSA\nDAW170\nDAHNONE\nDDAF\nDDB02202013\nDDK1\r\r\r\n`;
-  const code2 = `@
-ANSI 636024070001DL00310247DL
-DAQ53152244
-DCSRAABE
-DDEN
-DACRICHARD
-DDFN
-DADC
-DDGU
-DCAD
-DCBNONE
-DCDNONE
-DBD02012018
-DBB01031985\nDBA01032022
-DBC2DAU070 in
-DAYHAZ
-DAG17 HENRY STREET
-DAIBURLINGTON
-DAJVT
-DAK054010000  
-DCF190753152244
-DCGUSA
-DAW170
-DAHNONE
-DDAF
-DDB02202013
-DDK1
-\r
-\r
-\r
-`;
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
     // const value = parse(code2, options);
@@ -71,11 +37,15 @@ DDK1
       setData(value);
     }
   };
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
         <input autoFocus onKeyDown={handleKeyPress} type="text" value={data} />
       </form>
+      <p>Your input: </p>
+      <p>{data}</p>
+      <p>Your parsed input:</p>
       <div>{JSON.stringify(parse(data), null, 2)}</div>
     </div>
   );
