@@ -10,7 +10,7 @@
     "parse-usdl": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "vin-decode": "^0.2.0",
     "vindec": "^2.7.2"
   },
